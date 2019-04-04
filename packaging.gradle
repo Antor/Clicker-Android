@@ -1,0 +1,8 @@
+ext {
+    packaging = [
+            applicationId : 'com.gravityray.clicker.android',
+
+            versionCode : 1,
+            versionName : '0.1.0-SNAPSHOT',
+    ]
+}

@@ -1,0 +1,36 @@
+ext {
+    versions = [
+            minSdk : 15,
+            targetSdk : 28,
+            compileSdk : 28,
+
+            androidPlugin : '3.3.2',
+            gradleVersionsPlugin : '0.21.0',
+
+            rxjava : '2.2.8',
+            supportAnnotations : '1.0.2',
+            appcompat : '1.0.2',
+            constraintlayout : '1.1.3',
+
+            junit : '4.12',
+            androidxTestRunner : '1.1.1',
+            espresso : '3.1.1'
+    ]
+
+    buildPlugins = [
+            android : "com.android.tools.build:gradle:$versions.androidPlugin",
+            gradleVersionsPlugin : "com.github.ben-manes:gradle-versions-plugin:$versions.gradleVersionsPlugin",
+    ]
+
+    libraries = [
+            rxjava : "io.reactivex.rxjava2:rxjava:$versions.rxjava",
+            supportAnnotations : "androidx.annotation:annotation:$versions.supportAnnotations",
+
+            appcompat : "androidx.appcompat:appcompat:$versions.appcompat",
+            constraintlayout : "androidx.constraintlayout:constraintlayout:$versions.constraintlayout",
+
+            junit : "junit:junit:$versions.junit",
+            androidxTestRunner : "androidx.test:runner:$versions.androidxTestRunner",
+            espresso : "androidx.test.espresso:espresso-core:$versions.espresso"
+    ]
+}
