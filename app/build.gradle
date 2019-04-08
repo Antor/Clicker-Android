@@ -25,10 +25,12 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    implementation libraries.androidxFragment
+    implementation libraries.androidxAppcompat
+    implementation libraries.androidxConstraintlayout
+    implementation libraries.androidxLifecycleViewmodel
+
     implementation libraries.rxjava
-    implementation libraries.supportAnnotations
-    implementation libraries.appcompat
-    implementation libraries.constraintlayout
 
     testImplementation libraries.junit
 
