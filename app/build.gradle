@@ -14,6 +14,10 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -31,6 +35,14 @@ dependencies {
     implementation libraries.androidxLifecycleViewmodel
 
     implementation libraries.rxjava
+    implementation libraries.rxandroid
+    implementation libraries.rxbinding
+
+    implementation libraries.dagger
+    annotationProcessor libraries.daggerCompiler
+    implementation libraries.daggerAndroid
+    implementation libraries.daggerAndroidSupport
+    annotationProcessor libraries.daggerAndroidProcessor
 
     testImplementation libraries.junit
 

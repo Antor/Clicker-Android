@@ -1,6 +1,14 @@
 package com.gravityray.clicker.android;
 
-import android.app.Application;
+import com.gravityray.clicker.di.DaggerApplicationComponent;
 
-public class ClickerApplication extends Application {
+import dagger.android.AndroidInjector;
+import dagger.android.support.DaggerApplication;
+
+public final class ClickerApplication extends DaggerApplication {
+
+    @Override
+    protected AndroidInjector<? extends DaggerApplication> applicationInjector() {
+        return DaggerApplicationComponent.create();
+    }
 }

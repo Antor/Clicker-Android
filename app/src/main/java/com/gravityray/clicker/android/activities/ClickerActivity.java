@@ -1,12 +1,12 @@
 package com.gravityray.clicker.android.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
 import com.gravityray.clicker.android.R;
 
-public class ClickerActivity extends AppCompatActivity {
+import dagger.android.support.DaggerAppCompatActivity;
+
+public final class ClickerActivity extends DaggerAppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
