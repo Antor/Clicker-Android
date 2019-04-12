@@ -3,6 +3,6 @@ ext {
             applicationId : 'com.gravityray.clicker.android',
 
             versionCode : 2,
-            versionName : '0.2.0-SNAPSHOT',
+            versionName : '0.2.0',
     ]
 }
