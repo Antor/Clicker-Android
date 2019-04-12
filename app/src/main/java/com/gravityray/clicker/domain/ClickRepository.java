@@ -8,4 +8,6 @@ public interface ClickRepository {
     Observable<Integer> getClickCounter();
 
     Completable incrementClickCounter();
+
+    Completable resetClickCount();
 }

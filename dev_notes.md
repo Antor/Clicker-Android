@@ -1,6 +1,6 @@
 # DEVELOPMENT NOTES
 
-Below can be found useful information for maintaining and publishing this library.
+Below can be found useful information for maintenance.
 
 Q: How to upgrade to newer version of Gradle?  
 A: Run in terminal: `./gradlew wrapper --gradle-version 5.1.1`

@@ -13,12 +13,14 @@ import io.reactivex.subjects.Subject;
 @Singleton
 public final class InMemoryClickRepository implements ClickRepository {
 
+    private final int DEFAULT_COUNT = 0;
+
     private volatile int count;
     private final Subject<Integer> countSubject;
 
     @Inject
     public InMemoryClickRepository() {
-        this.count = 0;
+        this.count = DEFAULT_COUNT;
         this.countSubject = BehaviorSubject.createDefault(count)
                 .toSerialized();
     }
@@ -35,6 +37,16 @@ public final class InMemoryClickRepository implements ClickRepository {
 
     private synchronized void incrementAndPublish() {
         count++;
+        countSubject.onNext(count);
+    }
+
+    @Override
+    public Completable resetClickCount() {
+        return Completable.fromAction(this::resetAndPublish);
+    }
+
+    private synchronized void resetAndPublish() {
+        count = DEFAULT_COUNT;
         countSubject.onNext(count);
     }
 }

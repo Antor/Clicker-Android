@@ -27,6 +27,7 @@ public final class ClickerFragment extends DaggerFragment {
 
     private TextView counterTextView;
     private Button clickButton;
+    private Button resetButton;
 
     @Inject
     ViewModelProvider viewModelProvider;
@@ -52,6 +53,7 @@ public final class ClickerFragment extends DaggerFragment {
 
         counterTextView = view.findViewById(R.id.counter_text_view);
         clickButton = view.findViewById(R.id.click_button);
+        resetButton = view.findViewById(R.id.reset_button);
 
         return view;
     }
@@ -65,7 +67,9 @@ public final class ClickerFragment extends DaggerFragment {
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(this::showPresentationModel),
                 RxView.clicks(clickButton)
-                        .subscribe(u -> viewModel.click()));
+                        .subscribe(u -> viewModel.click()),
+                RxView.clicks(resetButton)
+                        .subscribe(u -> viewModel.reset()));
     }
 
     @Override
@@ -80,6 +84,7 @@ public final class ClickerFragment extends DaggerFragment {
 
         counterTextView = null;
         clickButton = null;
+        resetButton = null;
     }
 
     @SuppressLint("SetTextI18n")
