@@ -21,6 +21,7 @@ import androidx.lifecycle.ViewModelProvider;
 import dagger.android.support.DaggerFragment;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.schedulers.Schedulers;
 
 
 public final class ClickerFragment extends DaggerFragment {
@@ -64,6 +65,7 @@ public final class ClickerFragment extends DaggerFragment {
 
         resumedCompositeDisposable.addAll(
                 viewModel.getPresentationModel()
+                        .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(this::showPresentationModel),
                 RxView.clicks(clickButton)

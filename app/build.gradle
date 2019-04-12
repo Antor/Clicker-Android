@@ -37,6 +37,7 @@ dependencies {
     implementation libraries.rxjava
     implementation libraries.rxandroid
     implementation libraries.rxbinding
+    implementation libraries.rxsharedpreferences
 
     implementation libraries.dagger
     annotationProcessor libraries.daggerCompiler

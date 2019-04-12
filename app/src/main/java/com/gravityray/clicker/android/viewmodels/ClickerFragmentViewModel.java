@@ -10,6 +10,7 @@ import javax.inject.Inject;
 import androidx.lifecycle.ViewModel;
 import io.reactivex.Observable;
 import io.reactivex.disposables.SerialDisposable;
+import io.reactivex.schedulers.Schedulers;
 
 public final class ClickerFragmentViewModel extends ViewModel {
 
@@ -48,6 +49,7 @@ public final class ClickerFragmentViewModel extends ViewModel {
         clickDisposable.set(
                 doClickInteractor
                         .click()
+                        .subscribeOn(Schedulers.io())
                         .subscribe());
     }
 
@@ -55,6 +57,7 @@ public final class ClickerFragmentViewModel extends ViewModel {
         resetDisposable.set(
                 resetClickCountInteractor
                         .reset()
+                        .subscribeOn(Schedulers.io())
                         .subscribe());
     }
 }

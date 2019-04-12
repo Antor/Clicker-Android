@@ -13,6 +13,7 @@ import dagger.android.AndroidInjector;
         modules = {
                 AndroidInjectionModule.class,
 
+                ApplicationModule.class,
                 ActivitiesModule.class,
                 FragmentsModule.class,
 
